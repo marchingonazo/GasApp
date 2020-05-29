@@ -3,6 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GasApp.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="Otros" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Because I am Happy Regular"/>
+                <On Platform="Android" Value="Because I am Happy Regular.ttf#Because I am Happy Regular"/>
+            </OnPlatform>
+            <OnPlatform x:Key="Etiqueta" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Rhyndatton"/>
+                <On Platform="Android" Value="Rhyndatton.ttf#Rhyndatton"/>                
+            </OnPlatform>
+            <OnPlatform x:Key="Boton" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Aubrey"/>
+                <On Platform="Android" Value="AUBREY1.TTFf#AUBREY1"/>
+            </OnPlatform>
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>

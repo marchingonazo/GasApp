@@ -92,6 +92,15 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <BundleResource Include="..\GasApp\Fonts\AUBREY1.TTF">
+      <Link>Resources\Fonts\AUBREY1.TTF</Link>
+    </BundleResource>
+    <BundleResource Include="..\GasApp\Fonts\Because I am Happy Regular.ttf">
+      <Link>Resources\Fonts\Because I am Happy Regular.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\GasApp\Fonts\Rhyndatton.ttf">
+      <Link>Resources\Fonts\Rhyndatton.ttf</Link>
+    </BundleResource>
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,5 +165,14 @@
       <Project>{033752B0-3F7A-4B37-A810-ECC61A01C6B3}</Project>
       <Name>GasApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\loginpage.png" />
   </ItemGroup>
 </Project>

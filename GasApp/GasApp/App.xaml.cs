@@ -11,7 +11,7 @@ namespace GasApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Views.LoginPage();
         }
 
         protected override void OnStart()

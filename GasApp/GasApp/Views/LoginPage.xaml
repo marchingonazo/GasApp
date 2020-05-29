@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GasApp.Views.LoginPage"
+             Title="Login"
+             BackgroundImage="loginpage.png">
+    <ContentPage.Content>     
+        <StackLayout Padding="0,270,0,0">            
+            <Grid 
+                ColumnSpacing="0" 
+                RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>                
+                <Label
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    FontSize="25"
+                    FontFamily="{StaticResource Etiqueta}"
+                    Grid.Column="0"                   
+                    Text="Usuario :"
+                    TextColor="White"/>
+                <Image
+                    Aspect="AspectFit"
+                    Grid.Column="1"                    
+                    HorizontalOptions="End"
+                    Source="user"/>
+                <Entry
+                    FontAttributes="Italic"
+                    Grid.Column="2"                
+                    Placeholder="User Name"
+                    VerticalOptions="Start"
+                    x:Name="txtUser"/>
+            </Grid>
+            <Grid
+                ColumnSpacing="0" 
+                RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    FontSize="25"
+                    FontFamily="{StaticResource Etiqueta}"
+                    Grid.Column="0"
+                    Text="Password :"
+                    TextColor="White"/>
+                <Image
+                    Aspect="AspectFit"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    Source="pass"/>
+                <Entry                    
+                    FontAttributes="Italic"
+                    Grid.Column="2"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    VerticalOptions="Start"
+                    x:Name="txtPass"/>
+            </Grid>
+            <StackLayout Margin="30">
+                <Button 
+                    x:Name="btnIngresar"
+                    Text="Ingresar"
+                    FontFamily="{StaticResource Boton}"
+                    WidthRequest="100"
+                    HeightRequest="50"
+                    CornerRadius="20"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
