@@ -14,7 +14,7 @@
             </OnPlatform>
             <OnPlatform x:Key="Boton" x:TypeArguments="x:String">
                 <On Platform="iOS" Value="Aubrey"/>
-                <On Platform="Android" Value="AUBREY1.TTFf#AUBREY1"/>
+                <On Platform="Android" Value="AUBREY1.TTF#AUBREY1"/>
             </OnPlatform>
         </ResourceDictionary>
 

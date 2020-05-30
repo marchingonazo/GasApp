@@ -28,6 +28,9 @@
                     HorizontalOptions="End"
                     Source="user"/>
                 <Entry
+                    TextColor="White"
+                    FontSize="18"
+                    FontFamily="{StaticResource Boton}"
                     FontAttributes="Italic"
                     Grid.Column="2"                
                     Placeholder="User Name"
@@ -57,6 +60,9 @@
                     Source="pass"/>
                 <Entry                    
                     FontAttributes="Italic"
+                    FontSize="18"
+                    FontFamily="{StaticResource Boton}"
+                    TextColor="White"
                     Grid.Column="2"
                     IsPassword="True"
                     Placeholder="Password"
@@ -64,13 +70,54 @@
                     x:Name="txtPass"/>
             </Grid>
             <StackLayout Margin="30">
-                <Button 
-                    x:Name="btnIngresar"
-                    Text="Ingresar"
-                    FontFamily="{StaticResource Boton}"
-                    WidthRequest="100"
-                    HeightRequest="50"
-                    CornerRadius="20"/>
+                <ImageButton
+                    x:Name="btnIngresar"                    
+                    Aspect="AspectFit"
+                    Source="btnIngresar.png"
+                    WidthRequest="150"
+                    HeightRequest="75"                    
+                    BackgroundColor="Transparent"
+                    FlexLayout.Grow="1">
+                    <VisualStateManager.VisualStateGroups>                       
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>                    
+                </ImageButton>
+                <ImageButton
+                    x:Name="btnRegistroI"
+                    Aspect="AspectFit"
+                    Source="BtnRegistrate.png"
+                    WidthRequest="150"
+                    HeightRequest="75"                    
+                    BackgroundColor="Transparent"
+                    FlexLayout.Grow="1">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
