@@ -190,4 +190,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\btnSafe.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\crearcuenta.png" />
+  </ItemGroup>
 </Project>
