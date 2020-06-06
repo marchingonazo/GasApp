@@ -10,7 +10,8 @@ namespace GasApp.Models
     public class Registration
     {
         [PrimaryKey, AutoIncrement, Unique]
-        public string User { get; set; }
+        public string IdUser { get; set; }       
+        public string Name { get; set; }
         [MaxLength(10)]
         public string Pass { get; set; }
         public string Email { get; set; }

@@ -193,4 +193,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\crearcuenta.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus.png" />
+  </ItemGroup>
 </Project>
