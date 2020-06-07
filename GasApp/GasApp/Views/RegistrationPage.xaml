@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GasApp.Views.RegistrationPage"
-             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             Title="Registration">
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
     <ContentPage.Content>
         <StackLayout>
             <Grid BackgroundColor="White">
@@ -24,24 +23,38 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Margin="10"
-                    HeightRequest="110"
+                    Margin="10,10,10,0"
+                    HeightRequest="100"
                     IsClippedToBounds="True">
-                    <Image
-                        Grid.Row="0"
-                        Grid.ColumnSpan="2"                          
-                        Source="crearcuenta.png"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label                           
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"
+                            FontSize="40"
+                            FontFamily="{StaticResource Etiqueta}"                       
+                            Text="Registration   "
+                            TextColor="DarkSlateBlue"/>
+                        <Image
+                            Grid.Column="2"   
+                            HorizontalOptions="End"                           
+                            Source="crearcuenta.png"/>
+                    </Grid>
+                    
                 </PanCake:PancakeView>
-                <!--Cuerpo-->
+                <!--Datos-->
                 <PanCake:PancakeView
                     BackgroundGradientStartColor="#f3f3f3"
                     BackgroundGradientEndColor="#46CBFF"  
-                    Grid.Row="1"
-                    Grid.RowSpan="6"
+                    Grid.Row="1"                    
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Margin="10,10,10,10"
-                    Padding="0"
+                    Margin="10,0,10,10"                   
                     VerticalOptions="FillAndExpand"                                                          
                     CornerRadius="50,50,50,50"               
                     HasShadow="True"                    
@@ -53,25 +66,27 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <BoxView
                             Grid.Row="0"
-                            CornerRadius="75"
-                            HeightRequest="150"
-                            WidthRequest="150"
+                            CornerRadius="50"
+                            HeightRequest="100"
+                            WidthRequest="100"
                             HorizontalOptions="Center"
-                            BackgroundColor="Blue"/>
+                            BackgroundColor="White">
+                            
+                        </BoxView>
                         <Image
                              Grid.Row="0"
-                             HeightRequest="20"
-                             HorizontalOptions="End"
-                             Margin="-10,-10,0,0"
-                             Source="plus.png"/>
+                             HeightRequest="28"
+                             HorizontalOptions="Center"
+                             Margin="70,80,0,0"
+                             Source="plus.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding ClicAddImageCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
                         <Label
                             Grid.Row="1"                    
                             FontSize="25"
@@ -130,9 +145,19 @@
                             Grid.Row="8"
                             Margin="0"
                             Placeholder="Enter your Pasword"/>
-                    </Grid>
-                    
-                    
+                    </Grid>                   
+                </PanCake:PancakeView>
+                <PanCake:PancakeView
+                    BackgroundGradientStartColor="#46CBFF"
+                    BackgroundGradientEndColor="#f3f3f3"  
+                    CornerRadius="25,25,25,25"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Margin="10,10,10,10"                   
+                    IsClippedToBounds="True">
+                    <BoxView>
+
+                    </BoxView>
                 </PanCake:PancakeView>
                       
                 
