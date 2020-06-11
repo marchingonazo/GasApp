@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using GasApp.ViewModels;
+using GasApp.Models;
 
 namespace GasApp.Views
 {
@@ -16,7 +17,7 @@ namespace GasApp.Views
 		public RegistrationPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new RegistrationViewModel();
+            BindingContext = new RegistrationViewModel();                 
 		}
 	}
 }

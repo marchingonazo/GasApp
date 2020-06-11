@@ -67,26 +67,32 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <BoxView
-                            Grid.Row="0"
+                        <PanCake:PancakeView                            
+                            BackgroundColor="Transparent"                            
                             CornerRadius="50"
-                            HeightRequest="100"
-                            WidthRequest="100"
+                            HasShadow="True"
+                            HeightRequest="100"                           
                             HorizontalOptions="Center"
-                            BackgroundColor="White">
-                            
-                        </BoxView>
-                        <Image
-                             Grid.Row="0"
-                             HeightRequest="28"
-                             HorizontalOptions="Center"
-                             Margin="70,80,0,0"
-                             Source="plus.png">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer
-                                    Command="{Binding ClicAddImageCommand}"/>
-                            </Image.GestureRecognizers>
-                        </Image>
+                            IsClippedToBounds="True"
+                            Grid.Row="0"
+                            WidthRequest="100">
+                            <Image
+                                Aspect="AspectFit"                                
+                                Source="{Binding imageSource}">                                
+                            </Image>                            
+                        </PanCake:PancakeView>
+                        <ImageButton 
+                            x:Name="AddPic" 
+                            Aspect="AspectFit"
+                            Command="{Binding ClicAddImageCommand}"
+                            Grid.Row="0"
+                            HeightRequest="28"
+                            HorizontalOptions="Center"
+                            Source="plus.png"
+                            Margin="70,80,0,0"
+                            WidthRequest="28"
+                            CornerRadius="14">                            
+                        </ImageButton>                       
                         <Label
                             Grid.Row="1"                    
                             FontSize="25"
