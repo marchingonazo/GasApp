@@ -20,38 +20,52 @@ namespace GasApp.ViewModels
         public ICommand ClicAddImageCommand { get; set; }
         public ICommand ClicSafeUserCommand { get; set; }
 
-        public Image imageSource;
-        private MediaFile file;
-
         
+        private MediaFile file;
+        private ImageSource _imageSource;
+        public ImageSource ImageSource
+        {
+            set
+            {
+                if (_imageSource != value)
+                {
+                    _imageSource = value;
+                    PropertyChanged?.Invoke
+                        (this, new PropertyChangedEventArgs(nameof(ImageSource)));
+                }
+            }
+            get
+            {
+                return _imageSource;
+            }
+        }
+
+
+
         public RegistrationViewModel()
         {
+            this.ImageSource = null;
             ClicLoginPageCommand = new Command(async () =>
             {
                 await Application.Current.MainPage.Navigation.PopAsync();
             });
 
             ClicAddImageCommand = new Command(async () =>
-            {
-                if (!CrossMedia.Current.IsPickPhotoSupported)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Photo not suported", ":(", "OK");
-                    return;
-                }
-                file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(
-                    new Plugin.Media.Abstractions.PickMediaOptions
+            {               
+                file = await CrossMedia.Current.PickPhotoAsync(
+                        new PickMediaOptions
+                        {
+                            PhotoSize = PhotoSize.Small,
+                        });
+                if (file != null)
+                {                   
+                    ImageSource = ImageSource.FromStream(() =>
                     {
-                        PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small
+                        var stream = file.GetStream();
+                        file.Dispose();
+                        return stream;
                     });
-                if (file == null)
-                    return;
-
-                imageSource.Source = ImageSource.FromStream(() =>
-                {
-                    var stream = file.GetStream();
-                    file.Dispose();
-                    return stream;
-                });
+                }
             });
 
         }

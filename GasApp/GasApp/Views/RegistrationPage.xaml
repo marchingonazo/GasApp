@@ -77,8 +77,8 @@
                             Grid.Row="0"
                             WidthRequest="100">
                             <Image
-                                Aspect="AspectFit"                                
-                                Source="{Binding imageSource}">                                
+                                Aspect="Fill"
+                                Source="{Binding ImageSource}">                                
                             </Image>                            
                         </PanCake:PancakeView>
                         <ImageButton 
