@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.IO;
 using GasApp.Models;
 using Plugin.Media;
-using System.Threading;
+using System.Threading.Tasks;
 using Plugin.Media.Abstractions;
 
 namespace GasApp.ViewModels
@@ -18,10 +18,11 @@ namespace GasApp.ViewModels
 
         public ICommand ClicLoginPageCommand { get; set; }
         public ICommand ClicAddImageCommand { get; set; }
-        public ICommand ClicSafeUserCommand { get; set; }
+        public ICommand ClicSafeUserCommand { get; set; }  
+        public ICommand ClicCancelUserCommand { get; set; }
 
-        
         private MediaFile file;
+
         private ImageSource _imageSource;
         public ImageSource ImageSource
         {
@@ -41,10 +42,10 @@ namespace GasApp.ViewModels
         }
 
 
-
         public RegistrationViewModel()
         {
-            this.ImageSource = null;
+            this.ImageSource = "pic.png";
+            
             ClicLoginPageCommand = new Command(async () =>
             {
                 await Application.Current.MainPage.Navigation.PopAsync();
@@ -68,17 +69,16 @@ namespace GasApp.ViewModels
                 }
             });
 
-        }
-        public void SafeUser()
-        {
+            //ClicSafeUserCommand = new Command(async () =>
+            //{
+                
+            //});
+
+            //ClicCancelUserCommand = new Command(async () =>
+            //{
+
+            //});
 
         }
-        public void DeleteUser()
-        {
-
-        }
-       
-       
-
     }
 }

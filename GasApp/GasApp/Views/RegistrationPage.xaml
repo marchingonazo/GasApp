@@ -4,18 +4,19 @@
              x:Class="GasApp.Views.RegistrationPage"
              xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid BackgroundColor="White">
+        <StackLayout 
+            BackgroundColor="White">
+            <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>                    
+                    <RowDefinition Height="Auto"/>                    
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <!--encabezado-->
+                <!--Header-->
                 <PanCake:PancakeView  
                     BackgroundGradientStartColor="#46CBFF"
                     BackgroundGradientEndColor="#f3f3f3"  
@@ -38,7 +39,7 @@
                             VerticalOptions="CenterAndExpand"
                             FontSize="40"
                             FontFamily="{StaticResource Etiqueta}"                       
-                            Text="Registration   "
+                            Text="Registrate   "
                             TextColor="DarkSlateBlue"/>
                         <Image
                             Grid.Column="2"   
@@ -47,123 +48,191 @@
                     </Grid>
                     
                 </PanCake:PancakeView>
-                <!--Datos-->
+                <!--Data-->
                 <PanCake:PancakeView
                     BackgroundGradientStartColor="#f3f3f3"
                     BackgroundGradientEndColor="#46CBFF"  
                     Grid.Row="1"                    
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Margin="10,0,10,10"                   
+                    Margin="10,0,10,10"      
+                    Padding="10"
                     VerticalOptions="FillAndExpand"                                                          
                     CornerRadius="50,50,50,50"               
                     HasShadow="True"                    
                     IsClippedToBounds="True">
-                    <Grid>
+                    <Grid                        
+                        RowSpacing="7">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
                         <PanCake:PancakeView                            
                             BackgroundColor="Transparent"                            
-                            CornerRadius="50"
+                            CornerRadius="65"
                             HasShadow="True"
-                            HeightRequest="100"                           
+                            HeightRequest="130"                           
                             HorizontalOptions="Center"
                             IsClippedToBounds="True"
-                            Grid.Row="0"
-                            WidthRequest="100">
+                            Grid.Row="0" 
+                            Grid.ColumnSpan="2"
+                            Margin="0,10,0,0"
+                            VerticalOptions="Start"
+                            WidthRequest="130">
                             <Image
-                                Aspect="Fill"
-                                Source="{Binding ImageSource}">                                
+                                Aspect="AspectFill"
+                                Source="{Binding ImageSource}">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding ClicAddImageCommand}"
+                                        NumberOfTapsRequired="1"/>
+                                </Image.GestureRecognizers>
                             </Image>                            
-                        </PanCake:PancakeView>
-                        <ImageButton 
-                            x:Name="AddPic" 
-                            Aspect="AspectFit"
-                            Command="{Binding ClicAddImageCommand}"
-                            Grid.Row="0"
-                            HeightRequest="28"
-                            HorizontalOptions="Center"
-                            Source="plus.png"
-                            Margin="70,80,0,0"
-                            WidthRequest="28"
-                            CornerRadius="14">                            
-                        </ImageButton>                       
+                        </PanCake:PancakeView>                       
                         <Label
-                            Grid.Row="1"                    
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            FontFamily="{StaticResource Etiqueta}"
+                            FontSize="Large"
+                            Grid.Row="1" 
+                            Grid.ColumnSpan="2"
+                            Margin="0,10,0,0"
+                            TextColor="DarkSlateBlue"
+                            Text="Toca el circulo para agregar imagen  "/>
+                        <Label                            
+                            FontSize="25"
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            HorizontalOptions="CenterAndExpand"
+                            Margin="0,0,10,0"
+                            Text="_____________________________"
+                            TextColor="DarkMagenta"/>
+                        <Label
+                            Grid.Row="3" 
+                            Grid.Column="0"
                             FontSize="25"
                             FontFamily="{StaticResource Etiqueta}"
+                            HorizontalOptions="Start"
                             Margin="0"
-                            Text="Name :"
-                            TextColor="DarkSlateBlue"/>
+                            Text="   Name :"
+                            TextColor="DarkSlateBlue"
+                            VerticalOptions="Center"/>
                         <Entry 
                             x:Name="txtName"                            
                             FontFamily="{StaticResource Etiqueta}"
                             FontSize="25"
+                            HorizontalOptions="StartAndExpand"         
+                            Grid.Row="3"
+                            Grid.Column="1"
                             Margin="0"
-                            Grid.Row="2"
-                            Placeholder="Enter your Name"/>
+                            Placeholder="Registre su nombre                    "
+                            VerticalOptions="Start"/>
                         <Label
-                            Grid.Row="3"                            
+                            Grid.Row="4" 
+                            Grid.Column="0"
                             HorizontalOptions="Start"
-                            VerticalOptions="Center"
                             FontSize="25"
-                            FontFamily="{StaticResource Etiqueta}"
-                            Margin="0"
-                            Text="Email :"
-                            TextColor="DarkSlateBlue"/>
+                            FontFamily="{StaticResource Etiqueta}"                            
+                            Text="   Email :"
+                            TextColor="DarkSlateBlue"
+                            VerticalOptions="Center"/>
                         <Entry 
                             x:Name="txtEmail"                            
                             FontFamily="{StaticResource Etiqueta}"
                             FontSize="25"
                             Grid.Row="4"
-                            Margin="0"
-                            Placeholder="Enter your Email"/>
+                            Grid.Column="1"
+                            HorizontalOptions="StartAndExpand"
+                            Placeholder="Registre su correo electronico          "
+                            VerticalOptions="Start"/>
                         <Label
-                            Grid.Row="5"                          
+                            Grid.Row="5"    
+                            Grid.Column="0"
                             FontSize="25"
                             FontFamily="{StaticResource Etiqueta}"
-                            Margin="0"
-                            Text="Password :"
-                            TextColor="DarkSlateBlue"/>
+                            HorizontalOptions="Start"
+                            Text="   Password :"
+                            TextColor="DarkSlateBlue"
+                            VerticalOptions="Center"/>
                         <Entry 
                             x:Name="txtPass1"                            
                             FontFamily="{StaticResource Etiqueta}"
                             FontSize="25"
-                            Grid.Row="6"
-                            Margin="5"                            
-                            Placeholder="Enter your Pasword"/>
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            HorizontalOptions="StartAndExpand"                            
+                            Placeholder="Registre su Contraseña                "
+                            VerticalOptions="Start"/>
                         <Label
-                            Grid.Row="7"                          
+                            Grid.Row="6"                    
+                            Grid.Column="0"
                             FontSize="25"
                             FontFamily="{StaticResource Etiqueta}"
-                            Margin="0"
-                            Text="Password :"
-                            TextColor="DarkSlateBlue"/>
+                            HorizontalOptions="Start"
+                            Text="   Password :"
+                            TextColor="DarkSlateBlue"
+                            VerticalOptions="Center"/>
                         <Entry 
                             x:Name="txtPass2"                            
                             FontFamily="{StaticResource Etiqueta}"
                             FontSize="25"
-                            Grid.Row="8"
-                            Margin="0"
-                            Placeholder="Enter your Pasword"/>
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            HorizontalOptions="StartAndExpand"
+                            Placeholder="Repita Contraseña                    "
+                            VerticalOptions="Start"/>
                     </Grid>                   
                 </PanCake:PancakeView>
+                <!--Buttons-->
                 <PanCake:PancakeView
                     BackgroundGradientStartColor="#46CBFF"
                     BackgroundGradientEndColor="#f3f3f3"  
                     CornerRadius="25,25,25,25"
                     Grid.Row="3"
+                    Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Margin="10,10,10,10"                   
                     IsClippedToBounds="True">
-                    <BoxView>
-
-                    </BoxView>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image
+                            Aspect="AspectFit"
+                            HeightRequest="100"
+                            HorizontalOptions="FillAndExpand"
+                            Source="btnSafe.png"
+                            VerticalOptions="FillAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding ClicSafeUserCommand}"
+                                    NumberOfTapsRequired="1"/>                                
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image
+                            Aspect="AspectFit"
+                            Grid.Column="1"
+                            HeightRequest="100"
+                            HorizontalOptions="FillAndExpand"
+                            Source="btnSafe.png"
+                            VerticalOptions="FillAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding ClicCancelUserCommand}"
+                                    NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>                   
                 </PanCake:PancakeView>
                       
                 
