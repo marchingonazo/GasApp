@@ -13,11 +13,12 @@ namespace GasApp.Models
         public int IdUser { get; set; }       
         public string Name { get; set; }
         [MaxLength(10)]
-        public string Pass { get; set; }
+        public string Password { get; set; }
         [Unique]
         public string Email { get; set; }
-        public DateTime Date { get; set; }
+        //public DateTime Date { get; set; }
         public byte[] _Image { get; set; }
-        public int Remembered { get; set; }       
+        public bool Remembered { get; set; }   
+        public string Telephone { get; set; }
     }
 }

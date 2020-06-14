@@ -22,7 +22,8 @@ namespace GasApp.Services
         {
             var databasepath = DependencyService.Get<IPathService>().GetDataBasePath();
             conn = new SQLiteAsyncConnection(databasepath);
-            await conn.CreateTableAsync<Users>().ConfigureAwait(false);
+            conn.CreateTableAsync<Users>().Wait();//ConfigureAwait(false);
+            
         }
 
         public async Task Insert<T>(T model)
@@ -62,10 +63,11 @@ namespace GasApp.Services
             {
                 _Image     = u._Image,
                 IdUser     = u.IdUser,
-                Date       = u.Date,
+               // Date       = u.Date,
                 Name       = u.Name,
                 Email      = u.Email,
                 Remembered = u.Remembered,
+                Telephone = u.Telephone,
             }).ToList();
             return list;
         }

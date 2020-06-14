@@ -9,7 +9,7 @@ namespace GasApp.Droid.Implementations
     {
         public string GetDataBasePath()
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             return Path.Combine(path, "GasappDb.db3");
         }
     }
