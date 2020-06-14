@@ -7,15 +7,17 @@ namespace GasApp.Models
 {
     using SQLite;
     
-    public class Registration
+    public class Users
     {
         [PrimaryKey, AutoIncrement, Unique]
-        public string IdUser { get; set; }       
+        public int IdUser { get; set; }       
         public string Name { get; set; }
         [MaxLength(10)]
         public string Pass { get; set; }
+        [Unique]
         public string Email { get; set; }
-        public byte[] Image { get; set; }
+        public DateTime Date { get; set; }
+        public byte[] _Image { get; set; }
         public int Remembered { get; set; }       
     }
 }

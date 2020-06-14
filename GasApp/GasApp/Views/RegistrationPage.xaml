@@ -10,6 +10,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>                    
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -192,12 +193,18 @@
                             VerticalOptions="Start"/>
                     </Grid>                   
                 </PanCake:PancakeView>
+                <ActivityIndicator
+                    Color="Magenta"
+                    IsRunning="False"
+                    x:Name="algodon">
+                    
+                </ActivityIndicator>
                 <!--Buttons-->
                 <PanCake:PancakeView
                     BackgroundGradientStartColor="#46CBFF"
                     BackgroundGradientEndColor="#f3f3f3"  
                     CornerRadius="25,25,25,25"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Margin="10,10,10,10"                   
